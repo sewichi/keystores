@@ -4,15 +4,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'keystores/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'keystores'
+  spec.name          = 'placed-keystores'
   spec.version       = Keystores::VERSION
-  spec.authors       = ['Ryan Larson']
-  spec.email         = ['ryan.mango.larson@gmail.com']
+  spec.authors       = ['Jeremy Tryba']
+  spec.email         = 'jeremy@placed.com'
 
   spec.summary       = 'This gem allows applications to interact with java key stores'
   spec.description   = 'This gem allows you to interact with java key stores in pure ruby. Keys and Certificates are' +
                        ' represented as OpenSSL objects'
-  spec.homepage      = 'https://github.com/rylarson/keystores'
+  spec.homepage      = 'https://github.com/sewichi/keystores'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
