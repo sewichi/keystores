@@ -60,8 +60,10 @@ module OpenSSL
     class RSA
       original_initialize = instance_method(:initialize)
 
-      define_method(:initialize) do |der_or_pem, pass_phrase = nil|
+      define_method(:initialize) do |der_or_pem = nil, pass_phrase = nil|
         init = original_initialize.bind(self)
+        return init.() unless der_or_pem # Create a dummy empty key if not passed an argument
+
         begin
           init.(der_or_pem, pass_phrase)
         rescue Exception
